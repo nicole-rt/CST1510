@@ -21,40 +21,26 @@ Delete these instructions as you replace them with your code.
 #
 #    Remember: input() always gives back text.
 
-label = ""      # : replace with an input() call
-first = 0.0     # : replace with an input() call, converted
-second = 0.0    # : replace with an input() call, converted
+hostname = input("Hostname: ")
+gb_used = float(input("First value: "))    
+gb_total = float(input("Second value: "))    
 
 
-# ================================================================== PROCESS
-# 2. Work out what you were NOT given.       [Typical and above]
-#
-#    - difference : how far the first is from the second
-#    - percent    : the first as a percentage of the second
-#
-#    Do not type the answers. Calculate them.
-
-difference = 0.0   # 
-percent = 0.0      # 
+gb_free = gb_total - gb_used
+percent_used = (gb_used / gb_total) * 100
 
 
-# =================================================================== OUTPUT
-# 3. Print the report.
-#
-#    Threshold : print the three values you were given, inside a border
-#    Typical   : add difference and percent, 2 decimal places, right-aligned
-#    Excellent : difference always shows its sign, plus one line of your own
-#
-#    Useful:   f"{value:>10.2f}"    right-aligned, 2 decimal places
-#              f"{value:>+10.2f}"   the same, but always shows the sign
+percent_free = 100 - percent_used
 
 print()
 print("=" * 34)
-print(f"  RECORD CHECK  -  {label}")
+print(f"  RECORD CHECK  -  {hostname}")
 print("=" * 34)
-
-# : your report lines go here
-
+print(f"  Used        : {gb_used:>10.2f}")
+print(f"  Total       : {gb_total:>10.2f}")
+print(f"  Free        : {gb_free:>+10.2f}")
+print(f"  Percent     : {percent_used:>10.2f} %")
+print(f"  Percent free: {percent_free:>10.2f} %")
 print("=" * 34)
 
 
